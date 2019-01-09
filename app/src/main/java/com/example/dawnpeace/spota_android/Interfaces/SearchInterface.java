@@ -1,6 +1,5 @@
 package com.example.dawnpeace.spota_android.Interfaces;
 
-import com.example.dawnpeace.spota_android.Classes.Draft;
 import com.example.dawnpeace.spota_android.Classes.Preoutline;
 import com.example.dawnpeace.spota_android.Classes.ViewPreoutline;
 

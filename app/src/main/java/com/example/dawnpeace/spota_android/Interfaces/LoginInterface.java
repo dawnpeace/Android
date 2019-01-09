@@ -1,6 +1,6 @@
 package com.example.dawnpeace.spota_android.Interfaces;
+
 import com.example.dawnpeace.spota_android.Classes.LoginToken;
-import com.example.dawnpeace.spota_android.Classes.User;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

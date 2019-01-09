@@ -1,7 +1,6 @@
 package com.example.dawnpeace.spota_android.Interfaces;
 
 import com.example.dawnpeace.spota_android.Classes.Announcement;
-import com.example.dawnpeace.spota_android.Classes.AnnouncementList;
 
 import java.util.List;
 

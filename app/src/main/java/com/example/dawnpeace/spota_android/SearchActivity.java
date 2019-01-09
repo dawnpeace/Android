@@ -1,7 +1,7 @@
 package com.example.dawnpeace.spota_android;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dawnpeace.spota_android.Classes.Draft;
 import com.example.dawnpeace.spota_android.Classes.Preoutline;
 import com.example.dawnpeace.spota_android.Interfaces.SearchInterface;
 

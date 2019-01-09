@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.example.dawnpeace.spota_android.Classes.Review;
 import com.example.dawnpeace.spota_android.Classes.User;
 import com.example.dawnpeace.spota_android.Interfaces.UserInterface;
-import com.google.gson.Gson;
 
 import java.util.List;
 

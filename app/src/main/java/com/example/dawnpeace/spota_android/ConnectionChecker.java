@@ -5,8 +5,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import static android.support.v4.content.ContextCompat.getSystemService;
-
 public class ConnectionChecker {
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager

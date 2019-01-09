@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.dawnpeace.spota_android.Classes.Announcement;
-import com.example.dawnpeace.spota_android.Classes.AnnouncementList;
 import com.example.dawnpeace.spota_android.Interfaces.AnnouncementInterface;
 
 import java.util.List;

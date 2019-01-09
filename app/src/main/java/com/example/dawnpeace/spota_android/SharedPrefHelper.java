@@ -2,7 +2,6 @@ package com.example.dawnpeace.spota_android;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 import com.example.dawnpeace.spota_android.Classes.AnnouncementList;
 import com.example.dawnpeace.spota_android.Classes.User;

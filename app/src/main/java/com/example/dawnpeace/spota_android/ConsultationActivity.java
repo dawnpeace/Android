@@ -1,18 +1,16 @@
 package com.example.dawnpeace.spota_android;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.dawnpeace.spota_android.Classes.Review;
 import com.example.dawnpeace.spota_android.Interfaces.UserInterface;
-import com.google.gson.Gson;
 
 import java.util.List;
 

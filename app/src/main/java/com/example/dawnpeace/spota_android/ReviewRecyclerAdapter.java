@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.example.dawnpeace.spota_android.Classes.Review;
 import com.example.dawnpeace.spota_android.Interfaces.ReviewInterface;
 
-
 import java.util.List;
 
 import retrofit2.Call;
