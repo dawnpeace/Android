@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_border"
+    android:layout_margin="3sp">
+    <TextView
+        android:id="@+id/tv_sch_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8sp"
+        android:text="Type"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray400"/>
+    <TextView
+        android:id="@+id/tv_sch_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8sp"
+        android:paddingEnd="9sp"
+        android:textSize="14sp"
+        android:textColor="@color/colorGray400"
+        android:text="Nama Mhs(NIM)"
+        />
 
+    <TextView
+        android:id="@+id/tv_sch_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8sp"
+        android:paddingEnd="9sp"
+        android:textSize="13sp"
+        android:textAlignment="textEnd"
+        android:text="Tanggal, waktu"
+        android:textColor="@color/colorGray400"
+        android:paddingBottom="8sp"/>
 </LinearLayout>

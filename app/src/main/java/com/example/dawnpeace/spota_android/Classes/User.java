@@ -1,25 +1,10 @@
-package com.example.dawnpeace.spota_android;
+package com.example.dawnpeace.spota_android.Classes;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.File;
-
 public class User {
-
-    public User(String id, String student, String name, String identity_number, String email, int major_id, String photo){
-        this.email = email;
-        this.id = id;
-        this.identity_number = identity_number;
-        this.major_id = major_id;
-        this.name = name;
-        this.student = student;
-        this.photo = photo;
-    }
-
     @SerializedName("id")
     private String id;
-    @SerializedName("student")
-    private String student;
     @SerializedName("name")
     private String name;
     @SerializedName("identity_number")
@@ -30,6 +15,19 @@ public class User {
     private int major_id;
     @SerializedName("photo")
     private String photo;
+    private String fcmtoken;
+
+    public User(String id, String name, String identity_number, String email, int major_id, String photo, String fcmtoken){
+        this.email = email;
+        this.id = id;
+        this.identity_number = identity_number;
+        this.major_id = major_id;
+        this.name = name;
+        this.photo = photo;
+        this.fcmtoken = fcmtoken;
+    }
+
+
 
 
 
@@ -53,8 +51,9 @@ public class User {
         return email;
     }
 
-
-    public String getStudent_id() {
-        return student;
+    public String getPictureUrl(){
+        return photo;
     }
+
+
 }

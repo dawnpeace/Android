@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+    android:id="@+id/rl_ann_parent_layout"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="3sp"
+    android:background="@drawable/background_border">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_ann_title_layout">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pengumuman"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textColor="@color/colorGray500"
+            android:textSize="19sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/ll_ann_title_layout">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Pengirim"
+            android:textColor="@color/colorGray500"
+            android:id="@+id/tv_name"
+            android:textSize="13sp"/>
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:text="Tanggal Dikirim"
+            android:textColor="@color/colorGray500"
+            android:textSize="13sp"/>
+    </LinearLayout>
 </RelativeLayout>

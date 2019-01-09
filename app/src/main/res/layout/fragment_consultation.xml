@@ -1,6 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grayShade100">
+    <RelativeLayout
+        android:id="@+id/rl_pb_consultation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_centerInParent="true">
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_consultation_fail"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_info_black_24dp"/>
+            <TextView
+                android:id="@+id/tv_consultation_fail"
+                android:text="@string/consultation_fail"
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_consultation_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_first_consultation"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:visibility="gone"
+            android:layout_margin="4sp"
+            android:background="@color/grayShade300"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:text="@string/first_part"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/first_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/comment_count_placeholder"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/first_last_commented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/last_commented"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/ll_second_consultation"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="80sp"
+            android:layout_margin="4sp"
+            android:background="@color/grayShade300"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:text="@string/second_part"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/second_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/comment_count_placeholder"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/second_last_commented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/last_commented"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_third_consultation"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:visibility="gone"
+            android:layout_margin="4sp"
+            android:background="@color/grayShade300"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:text="@string/third_part"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/third_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/comment_count_placeholder"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/third_last_commented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/last_commented"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fourth_consultation"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_margin="4sp"
+            android:visibility="gone"
+            android:background="@color/grayShade300"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:text="@string/fourth_part"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fourth_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/comment_count_placeholder"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/fourth_last_commented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/last_commented"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fifth_consultation"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_margin="4sp"
+            android:visibility="gone"
+            android:background="@color/grayShade300"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:text="@string/fifth_part"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/fifth_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/comment_count_placeholder"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+            <TextView
+                android:id="@+id/fifth_last_commented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:text="@string/last_commented"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayShade100"
     tools:context=".ReplyActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_parent_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:textColor="@color/colorGray400"
+        android:layout_marginTop="12sp"
+        android:paddingStart="15sp"
+        android:paddingEnd="15sp"
+        android:visibility="invisible"/>
+    <EditText
+        android:id="@+id/tv_reply"
+        android:inputType="textMultiLine"
+        android:minLines="4"
+        android:maxLines="8"
+        android:scrollbars="vertical"
+        android:gravity="top|left"
+        android:background="@color/colorGray200"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="80sp"
+        android:hint="@string/add_reply"
+        android:textColorHint="@color/grayShade100"
+        android:textSize="14sp"
+        android:layout_margin="10sp"/>
+    <Button
+        android:layout_width="100sp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="@string/reply"
+        android:textSize="15sp"
+        android:layout_margin="10sp"
+        android:background="@color/grayShade200"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="end"
+        android:padding="5sp"
+        android:onClick="replyOnClick"
+        />
+</LinearLayout>

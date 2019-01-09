@@ -1,4 +1,4 @@
-package com.example.dawnpeace.spota_android;
+package com.example.dawnpeace.spota_android.Classes;
 
 import java.sql.Timestamp;
 

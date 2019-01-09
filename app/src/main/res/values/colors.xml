@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#000000</color>
+    <!--Accent-->
     <color name="colorGray50">#FAFAFA</color>
     <color name="colorGray100">#F5F5F5</color>
     <color name="colorGray200">#EEEEEE</color>
@@ -12,5 +13,15 @@
     <color name="colorGray700">#616161</color>
     <color name="colorGray800">#424242</color>
     <color name="colorGray900">#212121</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#9E9E9E</color>
+    <!--Background-->
+    <color name="grayShade50">#474747</color>
+    <color name="grayShade100">#3d3d3d</color>
+    <color name="grayShade200">#333333</color>
+    <color name="grayShade200_transparent">#80333333</color>
+    <color name="grayShade300">#2a2a2a</color>
+    <color name="grayShade400">#202020</color>
+    <color name="grayShade500">#161616</color>
+    <color name="grayShade600">#0c0c0c</color>
+    <color name="grayShade700">#020202</color>
 </resources>

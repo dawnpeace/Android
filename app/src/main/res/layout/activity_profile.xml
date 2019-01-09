@@ -1,9 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayShade200"
+    android:gravity="center_vertical"
     tools:context=".ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_change_photo"
+            android:layout_width="140sp"
+            android:layout_height="140sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8sp" />
 
-</android.support.constraint.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/btn_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/background_border"
+            android:padding="8sp"
+            android:src="@drawable/ic_folder"
+            android:textColor="@color/colorPrimary"
+            android:onClick="uploadImage"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/et_change_name"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10sp"
+            android:hint="@string/update_name"
+            android:textColorHint="@color/colorGray400"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_change_email"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10sp"
+            android:hint="@string/update_email"
+            android:textColorHint="@color/colorGray400"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_marginTop="4sp"
+            android:layout_marginBottom="4sp"
+            android:layout_marginStart="8sp"
+            android:layout_marginEnd="8sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/light_round_border"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_change_password"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10sp"
+                android:hint="@string/update_password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorGray400"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5sp"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorGray400"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_old_password"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10sp"
+                android:hint="@string/old_password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorGray400"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15sp"
+                android:text="@string/update_password_message"
+                android:textColor="@color/colorGray300"
+                android:textSize="11sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_border"
+            android:padding="6sp"
+            android:text="SUBMIT"
+            android:onClick="submitChange"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>

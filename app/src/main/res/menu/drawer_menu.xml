@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/drawer_menu_change_password"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/menu_profile" />
+        <item
+            android:id="@+id/drawer_menu_search"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="@string/search_placeholder"/>
+        <item
+            android:id="@+id/drawer_menu_notification"
+            android:icon="@drawable/ic_notifications_none_black_24dp"
+            android:title="@string/menu_notification"/>
+        <item
+            android:id="@+id/drawer_menu_about"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/menu_about" />
+        <item
+            android:id="@+id/drawer_menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+    </group>
 </menu>

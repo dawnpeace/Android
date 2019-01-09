@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
-
-</android.support.constraint.ConstraintLayout>
+    android:background="@color/colorGray800"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="top">
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2sp"
+            android:backgroundTint="@android:color/transparent"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionSearch"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryDark"
+            tools:targetApi="lollipop" />
+        <ImageButton
+            android:id="@+id/ib_search"
+            android:background="@color/colorGray600"
+            android:layout_gravity="center"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_marginStart="8dp"
+            android:onClick="search"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

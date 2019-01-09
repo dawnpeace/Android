@@ -3,15 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/shape_round_rectangle"
+    android:layout_margin="2sp"
+    android:padding="4sp"
     android:layout_height="wrap_content">
     <TextView
         android:paddingTop="5sp"
+        android:textColor="@android:color/white"
         android:id="@+id/tv_approval"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="match_parent"
+        android:textSize="12sp"
+        android:textColor="@android:color/white"
         android:textStyle="italic"
         android:layout_height="wrap_content"
         android:paddingBottom="5sp"
