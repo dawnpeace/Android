@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_review"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/cv_name"
+            android:text="SOME_NAME"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/cv_identity_number"
+            android:text="SOME_IDENTITY_NUMBER"
+            android:textColor="@color/colorGray400"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="2sp"
+            android:layout_marginBottom="2sp"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+
+        <TextView
+            android:id="@+id/cv_comment"
+            android:textSize="11sp"
+            android:textColor="@color/colorGray300"
+            android:text="SOME_TEXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/cv_date"
+            android:textSize="11sp"
+            android:textColor="@color/colorGray400"
+            android:text="SOME_DATE"
+            android:textAlignment="textEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_sub_menu"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sub_menu"
+            android:textAlignment="textEnd"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

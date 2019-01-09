@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "892895813567",
+    "firebase_url": "https://spota-218411.firebaseio.com",
+    "project_id": "spota-218411",
+    "storage_bucket": "spota-218411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892895813567:android:ebe7aa4c300a82ba",
+        "android_client_info": {
+          "package_name": "com.example.dawnpeace.spota_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892895813567-2gqq9huvfs9ta8dl6l7obc7ancc74kv2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dawnpeace.spota_android",
+            "certificate_hash": "3d0a33c6bef0f1f316af28539a23b1a7c85f6c8d"
+          }
+        },
+        {
+          "client_id": "892895813567-v2ojfgmr27l2rd41cuolkniontmdnmsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHg3qcHF49HapklNcQNJp3jIJbtxezz_4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892895813567-v2ojfgmr27l2rd41cuolkniontmdnmsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
