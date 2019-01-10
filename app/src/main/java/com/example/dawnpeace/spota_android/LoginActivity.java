@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView _password;
     private String identity_number;
     private String password;
+    private boolean logging_in = false;
 
 
 
@@ -59,9 +60,16 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
+    public void setLogging_in(boolean logging_in) {
+        this.logging_in = logging_in;
+    }
+
     public void login(View view){
         identity_number = _identity_number.getText().toString();
         password = _password.getText().toString();
+        if(logging_in){
+            Toast.makeText(this, "Harap tunggu hingga proses selesai . . ", Toast.LENGTH_SHORT).show();
+        }
 
         if(!ConnectionChecker.isNetworkAvailable(getApplicationContext())){
             Toast.makeText(this, "Tidak ada koneksi Internet .", Toast.LENGTH_SHORT).show();
@@ -69,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             if(!isValid(identity_number,password)){
             Toast.makeText(this,"Pastikan Form terisi",Toast.LENGTH_SHORT).show();
         } else {
+            setLogging_in(true);
             Retrofit retrofit = new Retrofit.Builder().baseUrl(APIUrl.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
             LoginInterface token = retrofit.create(LoginInterface.class);
             Call<LoginToken> call = token.getAuth(identity_number, password);
@@ -80,19 +89,23 @@ public class LoginActivity extends AppCompatActivity {
                     if(response.isSuccessful()){
                         if(response.body().getType() != 'M'){
                             Toast.makeText(LoginActivity.this, "Akun Tidak ditemukan", Toast.LENGTH_SHORT).show();
+                            setLogging_in(false);
                         } else {
                             SharedPrefHelper.getInstance(getApplicationContext()).storeToken(response.body().getAccess_token());
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            setLogging_in(false);
                             finish();
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, "Akun Tidak ditemukan", Toast.LENGTH_SHORT).show();
+                        setLogging_in(false);
                     }
 
                 }
                 @Override
                 public void onFailure(Call<LoginToken> call, Throwable t) {
                     Toast.makeText(LoginActivity.this, "Tidak dapat menghubungi server !", Toast.LENGTH_SHORT).show();
+                    setLogging_in(false);
                 }
             });
         }

@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void checkTokenAvailability(){
-        if(mSharedPrefs.getFirebaseToken() != null && mSharedPrefs.getUser() != null){
+        if(mSharedPrefs.getFirebaseToken() != null && mSharedPrefs.getToken() != null){
             Log.d("FCMTOKEN", "onResponse: "+mSharedPrefs.getFirebaseToken());
             if(!mSharedPrefs.issetFCMToken()){
                 Retrofit retrofit = new Retrofit.Builder().baseUrl(APIUrl.BASE_URL)
