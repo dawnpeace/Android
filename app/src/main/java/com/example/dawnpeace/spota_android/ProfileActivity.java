@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -113,19 +114,20 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, "Harap tunggu sampai data selesai dikirim . .", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+
+
             username = et_name.getText().toString();
             email = et_email.getText().toString();
             password = et_password.getText().toString();
             old_password = et_old_password.getText().toString();
             MultipartBody.Part filePart = null;
             if (image_uri != null) {
-                String filePath = getRealPathFromURIPath(image_uri, this);
+                String filePath = Build.VERSION.SDK_INT < 21 ? getImagePath(image_uri) : getRealPathFromURIPath(image_uri, this);
                 File file = new File(filePath);
                 RequestBody mFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
                 filePart = MultipartBody.Part.createFormData("picture", file.getName(), mFile);
             }
-
-
 
             RequestBody req_name = RequestBody.create(MediaType.parse("text/plain"), username);
             RequestBody req_email = RequestBody.create(MediaType.parse("text/plain"), email);
@@ -177,8 +179,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private boolean checkSubmit(){
-        boolean valid = false;
-
         String new_password = et_password.getText().toString();
         String old_password = et_old_password.getText().toString();
         String confirm_password = et_confirm.getText().toString();
@@ -204,6 +204,23 @@ public class ProfileActivity extends AppCompatActivity {
             int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
             return cursor.getString(idx);
         }
+    }
+
+    private String getImagePath(Uri uri){
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+        cursor.moveToFirst();
+        String document_id = cursor.getString(0);
+        document_id = document_id.substring(document_id.lastIndexOf(":")+1);
+        cursor.close();
+
+        cursor = getContentResolver().query(
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                null, MediaStore.Images.Media._ID + " = ? ", new String[]{document_id}, null);
+        cursor.moveToFirst();
+        String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+        cursor.close();
+
+        return path;
     }
 
 

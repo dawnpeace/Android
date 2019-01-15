@@ -1,35 +1,41 @@
 package com.example.dawnpeace.spota_android.Classes;
 
-import com.google.gson.annotations.SerializedName;
 
 public class LoginToken {
-        @SerializedName("access_token")
-        private String access_token;
-        @SerializedName("token_type")
-        private String token_type;
-        @SerializedName("error")
-        private int error;
-        @SerializedName("type")
-        private Character type;
 
-        public String getToken_type() {
-            return token_type;
-        }
+    private String access_token;
+    private String token_type;
+    private int error;
+    private String type;
+    private String status;
+
+    public LoginToken(String access_token, String token_type, int error, String type, String status) {
+        this.access_token = access_token;
+        this.token_type = token_type;
+        this.error = error;
+        this.type = type;
+        this.status = status;
+    }
+
+    public String getToken_type() {
+        return token_type;
+    }
 
 
-        public String getAccess_token() {
-            try{
-                return access_token;
-            } catch (NullPointerException e){
-                return access_token = "";
-            }
-        }
+    public String getStatus() {
+        return status;
+    }
 
-        public Character getType() {
-            return type;
-        }
+    public String getAccess_token() {
+        return access_token;
 
-        public int getError() {
-            return error;
-        }
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getError() {
+        return error;
+    }
 }

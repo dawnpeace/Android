@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private String identity_number;
     private String password;
     private boolean logging_in = false;
+    private SharedPrefHelper mSharedPref = SharedPrefHelper.getInstance(this);
 
 
 
@@ -87,20 +88,26 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<LoginToken> call, Response<LoginToken> response) {
                     if(response.isSuccessful()){
-                        if(response.body().getType() != 'M'){
-                            Toast.makeText(LoginActivity.this, "Akun Tidak ditemukan", Toast.LENGTH_SHORT).show();
-                            setLogging_in(false);
-                        } else {
-                            SharedPrefHelper.getInstance(getApplicationContext()).storeToken(response.body().getAccess_token());
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                            setLogging_in(false);
-                            finish();
+                        if(response.body().getType().equals("M")  ){
+                            if(response.body().getStatus().equals("A")){
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                mSharedPref.storeToken(response.body().getAccess_token());
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Akun anda nonaktif", Toast.LENGTH_SHORT).show();
+                            }
+                        } else{
+                            Toast.makeText(LoginActivity.this, "Akun tidak ditemukan !", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, "Akun Tidak ditemukan", Toast.LENGTH_SHORT).show();
-                        setLogging_in(false);
+                        if(response.code() == 401){
+                            Toast.makeText(LoginActivity.this, "Akun tidak ditemukan !", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
+                    setLogging_in(false);
                 }
                 @Override
                 public void onFailure(Call<LoginToken> call, Throwable t) {
