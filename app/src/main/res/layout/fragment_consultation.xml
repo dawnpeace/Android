@@ -28,8 +28,8 @@
             android:orientation="vertical"
             android:layout_centerInParent="true">
             <ImageView
-                android:layout_width="100sp"
-                android:layout_height="100sp"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_info_black_24dp"/>
             <TextView

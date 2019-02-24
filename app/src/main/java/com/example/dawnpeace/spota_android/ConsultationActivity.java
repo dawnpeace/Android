@@ -28,7 +28,6 @@ public class ConsultationActivity extends AppCompatActivity {
     private int section = 1;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

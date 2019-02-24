@@ -78,6 +78,8 @@ public class PreoutlineActivity extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(uri);
                     request.setTitle("Draft Praoutline");
                     request.setDescription("Downloading");
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    request.setDestinationInExternalFilesDir(this,"Downloads","Draft.pdf");
                     downloadManager.enqueue(request);
                 }
                 return true;

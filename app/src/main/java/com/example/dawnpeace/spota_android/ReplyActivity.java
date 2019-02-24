@@ -71,7 +71,7 @@ public class ReplyActivity extends AppCompatActivity {
 
     public void replyOnClick(View v){
         String replyMessage = tv_reply.getText().toString();
-        if(replyMessage.isEmpty()){
+        if(replyMessage.trim().isEmpty()){
             Toast.makeText(this, "Pastikan Anda telah menulis komentar .", Toast.LENGTH_SHORT).show();
         } else {
             if(commenting){

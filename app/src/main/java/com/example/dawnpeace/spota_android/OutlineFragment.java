@@ -43,6 +43,7 @@ public class OutlineFragment extends Fragment {
     private Context context;
 
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -117,8 +118,7 @@ public class OutlineFragment extends Fragment {
                     tv_upvote.setText(draft.getApproval_count() + "");
                     tv_downvote.setText(draft.getDisapproval_count() + "");
                     tv_comment.setText(draft.getReview_count() + "");
-
-
+                    tv_status.setVisibility(View.VISIBLE);
 
                     rl_progressbar.setVisibility(View.GONE);
                     ll_content.setVisibility(View.VISIBLE);
@@ -153,5 +153,6 @@ public class OutlineFragment extends Fragment {
         rl_fail.setVisibility(View.GONE);
         iv_comment = v.findViewById(R.id.iv_review);
         rv_approval = v.findViewById(R.id.rv_approval);
+        rv_approval.setNestedScrollingEnabled(false);
     }
 }

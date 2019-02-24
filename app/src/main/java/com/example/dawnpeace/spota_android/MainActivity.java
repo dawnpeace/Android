@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public TextView head_username;
     private SharedPrefHelper mSharedPrefs;
     private ImageView iv_nav_header;
+    private Fragment homeFragment = new HomeFragment();
+    private Fragment scheduleFragment = new ScheduleFragment();
+    private Fragment outlineFragment = new OutlineFragment();
+    private Fragment consultationFragment = new ConsultationFragment();
 
 
     @Override
@@ -209,16 +214,57 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
+
+        Bundle bundle = this.getIntent().getExtras();
+        if(bundle != null){
+            if(bundle.getBoolean("hasChanged")){
+                AsyncGlideCache asyncGlideCache = new AsyncGlideCache(this);
+                asyncGlideCache.execute();
+                Glide.get(this).clearMemory();
+                Glide.with(MainActivity.this)
+                        .load(mSharedPrefs.getUser().getPictureUrl())
+                        .apply(RequestOptions.circleCropTransform())
+                        .apply(new RequestOptions()
+                                .placeholder(R.drawable.ic_person_black_24dp)
+                                .error(R.drawable.ic_vpn_key_black_24dp)
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                .skipMemoryCache(true))
+                        .into(iv_nav_header);
+                head_identity_number.setText(mSharedPrefs.getUser().getIdentity_number());
+                head_username.setText(mSharedPrefs.getUser().getName());
+            }
+        }
         if(mSharedPrefs.getUser() != null){
             Glide.with(this)
                     .load(mSharedPrefs.getUser().getPictureUrl())
                     .apply(RequestOptions.circleCropTransform())
+                    .apply(RequestOptions.skipMemoryCacheOf(true))
                     .apply(new RequestOptions()
                             .error(R.drawable.ic_person_black_24dp)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
                             .skipMemoryCache(true))
                     .into(iv_nav_header);
         }
+
+
+        Fragment selectedFragment = null;
+        switch (bottomNav.getSelectedItemId()) {
+            case R.id.nav_home:
+                selectedFragment = homeFragment;
+                break;
+            case R.id.nav_schedule:
+                selectedFragment = scheduleFragment;
+                break;
+            case R.id.nav_outline:
+                selectedFragment = outlineFragment;
+                break;
+            case R.id.nav_profile:
+                selectedFragment = consultationFragment;
+                break;
+            default:
+                selectedFragment = new HomeFragment();
+                break;
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -227,16 +273,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Fragment selectedFragment = null;
             switch (menuItem.getItemId()) {
                 case R.id.nav_home:
-                    selectedFragment = new HomeFragment();
+                    selectedFragment = homeFragment;
                     break;
                 case R.id.nav_schedule:
-                    selectedFragment = new ScheduleFragment();
+                    selectedFragment = scheduleFragment;
                     break;
                 case R.id.nav_outline:
-                    selectedFragment = new OutlineFragment();
+                    selectedFragment = outlineFragment;
                     break;
                 case R.id.nav_profile:
-                    selectedFragment = new ConsultationFragment();
+                    selectedFragment = consultationFragment;
                     break;
                 default:
                     selectedFragment = new HomeFragment();
@@ -264,6 +310,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     mSharedPrefs.logout();
                     new LogoutTask().execute();
                     startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    ActivityCompat.finishAffinity(MainActivity.this);
                     finish();
                 } else {
                     Toast.makeText(MainActivity.this, response.message(), Toast.LENGTH_SHORT).show();

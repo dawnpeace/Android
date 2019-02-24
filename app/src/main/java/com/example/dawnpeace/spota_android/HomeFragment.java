@@ -47,29 +47,10 @@ public class HomeFragment extends Fragment {
         rl_progressbar = v.findViewById(R.id.rl_pb_home);
         rl_content = v.findViewById(R.id.rl_home_content);
         rl_fail = v.findViewById(R.id.rl_home_fail);
+        setAnnouncements();
         return v;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setAnnouncements();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(ConnectionChecker.isNetworkAvailable(getActivity())){
-            setAnnouncements();
-        } else {
-            Toast.makeText(getActivity(), "Periksa koneksi Internet", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     private void setAnnouncements(){
         mySharedPref = SharedPrefHelper.getInstance(getActivity());
@@ -95,7 +76,7 @@ public class HomeFragment extends Fragment {
                         swipeManager.setRefreshing(false);
                     }
                 } else {
-
+                    Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 

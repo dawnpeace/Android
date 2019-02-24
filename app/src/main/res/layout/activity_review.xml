@@ -26,6 +26,6 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         app:borderWidth="0px"
-        android:backgroundTint="@color/grayShade400"
+        app:backgroundTint="@color/grayShade400"
         android:src="@drawable/ic_comment_black_24dp" />
 </FrameLayout>

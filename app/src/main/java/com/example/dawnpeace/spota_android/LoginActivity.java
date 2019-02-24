@@ -3,7 +3,6 @@ package com.example.dawnpeace.spota_android;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,14 +75,12 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Tidak ada koneksi Internet .", Toast.LENGTH_SHORT).show();
         } else
             if(!isValid(identity_number,password)){
-            Toast.makeText(this,"Pastikan Form terisi",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Nomor Identitas atau Password tidak boleh kosong.",Toast.LENGTH_SHORT).show();
         } else {
             setLogging_in(true);
             Retrofit retrofit = new Retrofit.Builder().baseUrl(APIUrl.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
             LoginInterface token = retrofit.create(LoginInterface.class);
             Call<LoginToken> call = token.getAuth(identity_number, password);
-            Log.d("identity", "login: "+identity_number);
-            Log.d("password", "login: "+password);
             call.enqueue(new Callback<LoginToken>() {
                 @Override
                 public void onResponse(Call<LoginToken> call, Response<LoginToken> response) {

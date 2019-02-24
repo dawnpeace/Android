@@ -58,7 +58,7 @@ public class SearchActivity extends AppCompatActivity {
 
     public void search(){
         String query = et_search.getText().toString();
-        if(query.isEmpty()){
+        if(query.trim().isEmpty()){
             Toast.makeText(this, "Kata Kunci Kosong . .", Toast.LENGTH_SHORT).show();
         } else {
             OkHttpClient client = sharedpref.getInterceptor();

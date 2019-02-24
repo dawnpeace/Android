@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".LoginActivity">
 
@@ -12,48 +12,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_centerInParent="true"
         android:ems="10"
         android:hint="Nomor Identitas"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/ET_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/ET_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ET_identity_number"
         android:layout_marginStart="8dp"
+        android:layout_centerInParent="true"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="260dp"
-        android:ems="10"
-        android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Password" />
+
 
     <Button
         android:id="@+id/BT_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_below="@id/ET_password"
+        android:gravity="center"
+        android:layout_centerInParent="true"
         android:onClick="login"
-        android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_password"
-        app:layout_constraintVertical_bias="0.17000002" />
+        android:text="Login" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

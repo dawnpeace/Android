@@ -63,7 +63,7 @@ public class ConsultationReviewActivity extends AppCompatActivity {
     }
 
     private void sendMessage(String message){
-        if(!message.isEmpty()){
+        if(!message.trim().isEmpty()){
             if(commenting){
                 Toast.makeText(this, "Harap tunggu hingga pesan terkirim . .", Toast.LENGTH_SHORT).show();
                 return;
@@ -96,7 +96,7 @@ public class ConsultationReviewActivity extends AppCompatActivity {
             });
 
         } else {
-
+            Toast.makeText(this, "Pastikan Anda telah menulis komentar .", Toast.LENGTH_SHORT).show();
         }
     }
 
